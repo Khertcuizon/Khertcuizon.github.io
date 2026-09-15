@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khert Cuizon — BSCS Student & Aspiring Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-hex">KC</span>
+      <span class="logo-text">Khert<span>Cuizon</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-glow nav-cta">Let's Connect</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section home-section">
+  <div class="bg-layer" style="background-image:url('assets/home.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="circuit-lines"></div>
+
+  <div class="section-inner home-inner">
+    <div class="home-text reveal-up">
+      <div class="badge"><span class="badge-icon">&lt;/&gt;</span> Hello, I'm</div>
+      <h1 class="hero-title">
+        <span class="title-line">Khert</span>
+        <span class="title-line accent">Cuizon</span>
+      </h1>
+      <p class="hero-subtitle"><span id="typedText"></span><span class="cursor-blink">|</span></p>
+      <p class="hero-desc">Building clean, functional web and mobile experiences — from Flutter apps to database-driven systems. I turn logic into interfaces people actually enjoy using.</p>
+      <div class="hero-buttons">
+        <a href="#skills" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <div class="social-icons">
+        <a href="mailto:khert.gemperoso.cuizon.12345@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm2 0 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://github.com/Khertcuizon" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/khert.cuizon.2025" class="social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1 0 3.88 1.94 1.94 0 0 1 0-3.88ZM5.2 9.75h3.48V19H5.2V9.75Zm5.7 0h3.34v1.27h.05c.47-.87 1.6-1.79 3.3-1.79 3.53 0 4.18 2.32 4.18 5.34V19h-3.48v-4.16c0-.99-.02-2.27-1.38-2.27-1.38 0-1.6 1.08-1.6 2.2V19h-3.41V9.75Z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="home-visual reveal-up delay-2">
+      <div class="rings">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+      </div>
+      <div class="profile-card tilt-card" id="profileCard">
+        <div class="hex-frame">
+          <img src="assets/profile.jpg" alt="Khert Cuizon" class="profile-img">
+        </div>
+        <div class="code-snippet">
+          <span class="cs-line"><span class="cs-key">const</span> dev <span class="cs-op">=</span> {</span>
+          <span class="cs-line">&nbsp;&nbsp;name: <span class="cs-str">"Khert Cuizon"</span>,</span>
+          <span class="cs-line">&nbsp;&nbsp;role: <span class="cs-str">"BSCS Student"</span>,</span>
+          <span class="cs-line">&nbsp;&nbsp;status: <span class="cs-str">"building..."</span></span>
+          <span class="cs-line">};</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+  <div class="bg-layer" style="background-image:url('assets/about.jpg')"></div>
+  <div class="overlay"></div>
+
+  <div class="section-inner about-inner">
+    <div class="glass-panel about-panel reveal-up">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-image-frame">
+            <img src="assets/profile.jpg" alt="Khert Cuizon portrait" class="about-img">
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="eyebrow">About Me</span>
+          <h2 class="section-title">Turning coursework into <span class="accent">working software.</span></h2>
+          <p class="about-bio">
+            I'm a BSCS student at Tangub City Global College, Institute of Computer Studies, focused on building things that actually run — not just diagrams on a slide. My toolkit centers on <strong>Flutter</strong> for cross-platform apps, <strong>HTML</strong> and <strong>CSS</strong> for interfaces, <strong>JavaScript</strong> for interaction, and <strong>MySQL</strong> for the data underneath it all. Between thesis work, group projects, and personal builds, I've learned that good software is equal parts logic and patience.
+          </p>
+          <div class="badge-grid">
+            <div class="feature-badge"><span class="fb-icon">🧩</span><span>Problem Solver</span></div>
+            <div class="feature-badge"><span class="fb-icon">⚡</span><span>Fast Learner</span></div>
+            <div class="feature-badge"><span class="fb-icon">🤝</span><span>Team Player</span></div>
+            <div class="feature-badge"><span class="fb-icon">📈</span><span>Always Improving</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section skills-section">
+  <div class="bg-layer" style="background-image:url('assets/skills.png')"></div>
+  <div class="overlay"></div>
+
+  <div class="section-inner skills-inner">
+    <span class="eyebrow center reveal-up">Skills</span>
+    <h2 class="section-title center reveal-up">What I build with</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card tilt-card reveal-up">
+        <div class="skill-icon">🌐</div>
+        <h3>HTML</h3>
+        <div class="progress-track"><div class="progress-fill" data-level="85"></div></div>
+        <span class="progress-label">85%</span>
+        <div class="card-reflection"></div>
+      </div>
+
+      <div class="skill-card tilt-card reveal-up delay-1">
+        <div class="skill-icon">🎨</div>
+        <h3>CSS</h3>
+        <div class="progress-track"><div class="progress-fill" data-level="80"></div></div>
+        <span class="progress-label">80%</span>
+        <div class="card-reflection"></div>
+      </div>
+
+      <div class="skill-card tilt-card reveal-up delay-2">
+        <div class="skill-icon">📱</div>
+        <h3>Flutter</h3>
+        <div class="progress-track"><div class="progress-fill" data-level="50"></div></div>
+        <span class="progress-label">50%</span>
+        <div class="card-reflection"></div>
+      </div>
+
+      <div class="skill-card tilt-card reveal-up delay-3">
+        <div class="skill-icon">🗄️</div>
+        <h3>MySQL</h3>
+        <div class="progress-track"><div class="progress-fill" data-level="50"></div></div>
+        <span class="progress-label">50%</span>
+        <div class="card-reflection"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="bg-layer" style="background-image:url('assets/contact.jpg')"></div>
+  <div class="overlay"></div>
+
+  <div class="section-inner contact-inner">
+    <div class="glass-panel contact-panel reveal-up">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Contact</span>
+          <h2 class="section-title">Let's build something.</h2>
+          <p class="contact-desc">Open to internships, group projects, and freelance work. Reach out — I reply fast.</p>
+          <ul class="contact-list">
+            <li><span class="ci-icon">📧</span> khert.gemperoso.cuizon.12345@gmail.com</li>
+            <li><span class="ci-icon">📱</span> 09871525700</li>
+            <li><span class="ci-icon">📍</span> Philippines</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required placeholder=" ">
+            <label for="name">Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required placeholder=" ">
+            <label for="email">Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" required placeholder=" " rows="4"></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button type="submit" class="btn btn-glow submit-btn">
+            <span>Send Message</span>
+          </button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-circuit"></div>
+  <div class="footer-inner">
+    <a href="#home" class="logo footer-logo">
+      <span class="logo-hex">KC</span>
+      <span class="logo-text">Khert<span>Cuizon</span></span>
+    </a>
+    <p class="footer-tagline">Code. Create. Innovate.</p>
+    <div class="social-icons footer-socials">
+      <a href="mailto:khert.gemperoso.cuizon.12345@gmail.com" class="social-icon" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm2 0 8 6 8-6" 
+          fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://github.com/Khertcuizon" class="social-icon" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></svg>
+      </a>
+       <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+    </div>
+    <p class="footer-copy">© 2025 Khert Cuizon. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
