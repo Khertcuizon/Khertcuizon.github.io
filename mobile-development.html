@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mobile Development — Khert Cuizon</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('portfolio-theme')||'dark';}catch(e){document.documentElement.dataset.theme='dark';}})();</script><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/kc-logo-favicon.png" rel="icon" type="image/png"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body class="service-detail-page mobile-detail-page">
+<nav class="navbar" id="navbar">
+<div class="nav-inner">
+<a aria-label="Khert Cuizon home" class="logo" href="index.html">
+<img class="logo-image" src="assets/kc-logo.png" alt="KC logo">
+<span class="logo-text">Khert<span>Cuizon</span></span>
+</a>
+<ul class="nav-links" id="navLinks">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="about.html">About</a></li>
+<li><a class="nav-link" href="skills.html">Skills</a></li>
+<li class="dropdown services-nav">
+<a class="nav-link active" href="services.html">Services</a>
+<button aria-controls="dropdownMenu" aria-expanded="false" aria-label="Open services menu" class="dropdown-caret" id="dropdownBtn" type="button">
+<span class="dropdown-arrow" id="dropdownArrow">▼</span>
+</button>
+<ul class="dropdown-menu" id="dropdownMenu">
+<li><a href="services.html">Services Overview</a></li>
+<li><a href="web-development.html">Web Development</a></li>
+<li><a class="current-service" href="mobile-development.html">Mobile Development</a></li>
+<li><a href="graphic-design.html">Graphic Design</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a class="btn btn-glow nav-cta" href="contact.html">Let's Connect</a>
+<button aria-label="Switch to light mode" class="theme-toggle" id="themeToggle" title="Light/Dark mode" type="button">
+<span aria-hidden="true" class="theme-icon" id="themeIcon">☀</span>
+</button>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+<main class="single-service" style="--service-bg: url('assets/service-mobile-bg.png');">
+<div class="single-service-overlay"></div>
+<div class="single-service-inner">
+<a class="service-back" href="services.html">← Back to Services</a>
+<section class="single-service-card">
+<div class="single-service-copy">
+<span class="service-number">02</span>
+<p class="service-kicker">Mobile Development</p>
+<h1>Laboratory Reservation App</h1>
+<p>I developed this mobile application using <strong>Flutter</strong> and <strong>Dart</strong>. I use <strong>Firebase</strong> for the database and backend services of the reservation system.</p>
+<div class="tech-tags">
+<span>Flutter</span><span>Dart</span><span>Firebase</span><span>Mobile UI</span>
+</div>
+</div>
+<div class="single-service-media mobile-detail-media">
+<img alt="Laboratory Reservation app reservation screen" src="assets/mobile-reservation.png"/>
+<img alt="Laboratory Reservation app admin access screen" src="assets/mobile-admin.png"/>
+</div>
+</section>
+</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

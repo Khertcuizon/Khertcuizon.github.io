@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khert Cuizon — Home</title>
+<title>About — Khert Cuizon</title>
 <script>
   (function () {
     try {
@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" href="assets/kc-logo-favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-home multi-page">
+<body class="page-about multi-page">
 <canvas id="particles"></canvas>
 <div class="cursor-glow" id="cursorGlow"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -29,8 +29,8 @@
       <span class="logo-text">Khert<span>Cuizon</span></span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="nav-link active">Home</a></li>
-      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link active">About</a></li>
       <li><a href="skills.html" class="nav-link">Skills</a></li>
       <li class="dropdown services-nav">
         <a href="services.html" class="nav-link">Services</a>
@@ -57,62 +57,33 @@
     </div>
   </div>
 </nav>
-<section class="section home-section" id="home">
-<div class="bg-layer" style="background-image:url('assets/home1.jpg')"></div>
+<section class="section about-section" id="about">
+<div class="bg-layer" style="background-image:url('assets/about.jpg')"></div>
 <div class="overlay"></div>
-<div class="circuit-lines"></div>
-<div class="section-inner home-inner">
-<div class="home-text reveal-up">
-<div class="badge"><span class="badge-icon">&lt;/&gt;</span> Hello, I'm</div>
-<h1 class="hero-title">
-<span class="title-line">Khert</span>
-<span class="title-line accent">Cuizon</span>
-</h1>
-<p class="hero-subtitle"><span id="typedText"></span><span class="cursor-blink">|</span></p>
-<p class="hero-desc">Building clean, functional web and mobile experiences — from Flutter apps to database-driven systems. I turn logic into interfaces people actually enjoy using.</p>
-<div class="hero-buttons">
-<a class="btn btn-primary" href="skills.html">View My Work</a>
-<a class="btn btn-outline" href="contact.html">Contact Me</a>
-</div>
-<div class="social-icons">
-<a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/_cuizon29?stkn=MW1yNzFjMjl4Mm9i" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<rect fill="none" height="18" rx="5" ry="5" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="3"></rect>
-<circle cx="12" cy="12" fill="none" r="4.2" stroke="currentColor" stroke-width="1.8"></circle>
-<circle cx="17.4" cy="6.6" fill="currentColor" r="1.1"></circle>
-</svg>
-</a>
-<a aria-label="GitHub" class="social-icon" href="https://github.com/Khertcuizon">
-<svg viewbox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"></path></svg>
-</a>
-<a aria-label="Facebook" class="social-icon" href="https://www.facebook.com/khert.cuizon.2025" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" viewbox="0 0 16 16">
-<path d="M8.051 16v-7H5.5V6h2.551V4.291C8.051 1.742 9.612 0 12.296 0H14.5v3h-1.338c-1.173 0-1.611.726-1.611 1.47V6H14.5l-.5 3h-2.449v7H8.051Z" fill="currentColor"></path>
-</svg>
-</a>
+<div class="section-inner about-inner">
+<div class="glass-panel about-panel reveal-up">
+<div class="about-grid">
+<div class="about-image-wrap">
+<div class="about-image-frame">
+<img alt="Khert Cuizon portrait" class="about-img" src="assets/profile.jpg"/>
 </div>
 </div>
-<div class="home-visual reveal-up delay-2">
-<div class="rings">
-<div class="ring ring-1"></div>
-<div class="ring ring-2"></div>
-<div class="ring ring-3"></div>
-</div>
-<div class="profile-card tilt-card" id="profileCard">
-<div class="hex-frame">
-<img alt="Khert Cuizon" class="profile-img" src="assets/profile.jpg"/>
-</div>
-<div class="code-snippet">
-<span class="cs-line"><span class="cs-key">const</span> dev <span class="cs-op">=</span> {</span>
-<span class="cs-line">  name: <span class="cs-str">"Khert Cuizon"</span>,</span>
-<span class="cs-line">  role: <span class="cs-str">"BSCS Student"</span>,</span>
-<span class="cs-line">  status: <span class="cs-str">"building..."</span></span>
-<span class="cs-line">};</span>
+<div class="about-content">
+<span class="eyebrow">About Me</span>
+<h2 class="section-title">Turning coursework into <span class="accent">working software.</span></h2>
+<p class="about-bio">
+            I'm a BSCS student at Tangub City Global College, Institute of Computer Studies, focused on building things that actually run — not just diagrams on a slide. My toolkit centers on <strong>Flutter</strong> and <strong>Dart</strong> for cross-platform apps, <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> for web interfaces, and <strong>Firebase</strong> for app data and backend services. Between thesis work, group projects, and personal builds, I've learned that good software is equal parts logic and patience.
+          </p>
+<div class="badge-grid">
+<div class="feature-badge"><span class="fb-icon">🧩</span><span>Problem Solver</span></div>
+<div class="feature-badge"><span class="fb-icon">⚡</span><span>Keep Growing</span></div>
+<div class="feature-badge"><span class="fb-icon">🤝</span><span>Team Player</span></div>
+<div class="feature-badge"><span class="fb-icon">📈</span><span>Always Improving</span></div>
 </div>
 </div>
 </div>
 </div>
-<a aria-label="Scroll down" class="scroll-cue" href="about.html"><span></span></a>
+</div>
 </section>
 <footer class="footer">
 <div class="footer-circuit"></div>
