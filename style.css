@@ -592,6 +592,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateY(-24px);
 }
 
+.first-portfolio-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.first-portfolio-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 179, 71, 0.18);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.34);
+}
+
+.first-portfolio-media .first-portfolio-main {
+  grid-column: 1 / -1;
+}
+
 .design-media {
   display: grid;
   grid-template-columns: 1fr;
@@ -649,6 +668,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
   .mobile-media img:last-child {
     transform: translateY(-10px);
+  }
+
+  .first-portfolio-media {
+    grid-template-columns: 1fr;
+  }
+
+  .first-portfolio-media .first-portfolio-main {
+    grid-column: auto;
   }
 }
 
@@ -1524,5 +1551,78 @@ html[data-theme="light"] #particles {
   }
   html[data-theme="light"] .dropdown-menu {
     background: rgba(8,122,73,0.045);
+  }
+}
+
+/* Web Development projects grouped on the Web Development page */
+.web-projects-page {
+  align-items: flex-start;
+}
+
+.web-projects-page .single-service-inner {
+  padding-bottom: 28px;
+}
+
+.web-projects-heading {
+  max-width: 780px;
+  margin: 0 0 28px;
+}
+
+.web-projects-heading h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1.08;
+  margin: 5px 0 14px;
+  color: var(--text-white);
+}
+
+.web-projects-heading > p:not(.service-kicker) {
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+.web-project-card + .web-project-card {
+  margin-top: 34px;
+}
+
+.web-project-card .single-service-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  line-height: 1.1;
+  margin: 5px 0 20px;
+  color: var(--text-white);
+}
+
+.web-project-card .single-service-copy > p:not(.service-kicker) {
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.web-first-portfolio-media {
+  align-self: stretch;
+}
+
+.web-first-portfolio-media img {
+  height: 100%;
+  min-height: 150px;
+}
+
+@media (max-width: 900px) {
+  .web-projects-heading {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .web-project-card + .web-project-card {
+    margin-top: 22px;
+  }
+
+  .web-projects-heading {
+    margin-bottom: 20px;
   }
 }
