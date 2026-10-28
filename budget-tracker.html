@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker — Khert Cuizon</title>
+  <script>
+    (function () {
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'dark';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/kc-logo-favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="service-detail-page budget-page">
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Khert Cuizon home">
+        <img class="logo-image" src="assets/kc-logo.png" alt="KC logo">
+        <span class="logo-text">Khert<span>Cuizon</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li class="dropdown services-nav">
+          <a href="services.html" class="nav-link active">Services</a>
+          <button id="dropdownBtn" class="dropdown-caret" type="button" aria-label="Open services menu" aria-expanded="false" aria-controls="dropdownMenu">
+            <span id="dropdownArrow" class="dropdown-arrow">▼</span>
+          </button>
+          <ul id="dropdownMenu" class="dropdown-menu">
+            <li><a href="services.html">Services Overview</a></li>
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="mobile-development.html">Mobile Development</a></li>
+            <li><a href="graphic-design.html">Graphic Design</a></li>
+            <li><a class="current-service" href="budget-tracker.html">Budget Tracker</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-glow nav-cta">Let's Connect</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Light/Dark mode">
+          <span class="theme-icon" id="themeIcon" aria-hidden="true">☀</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="budget-main single-service">
+    <div class="single-service-overlay"></div>
+    <div class="single-service-inner">
+      <a class="service-back" href="services.html">← Back to Services</a>
+
+      <section class="budget-shell">
+        <div class="budget-header">
+          <div>
+            <p class="service-kicker">Finance Tool</p>
+            <h1>Budget Tracker</h1>
+          </div>
+          <button id="clearBudget" class="btn btn-outline budget-clear" type="button">Clear All</button>
+        </div>
+
+        <div class="budget-summary-grid">
+          <article class="summary-card income-card">
+            <span>Income</span>
+            <strong id="incomeTotal">$0.00</strong>
+          </article>
+          <article class="summary-card expense-card">
+            <span>Expenses</span>
+            <strong id="expenseTotal">$0.00</strong>
+          </article>
+          <article class="summary-card balance-card">
+            <span>Balance</span>
+            <strong id="balanceTotal">$0.00</strong>
+          </article>
+        </div>
+
+        <div class="budget-status-row">
+          <p id="budgetSummary">On track • $0.00 remaining</p>
+          <span class="total-count">Transactions: <strong id="totalCount">0</strong></span>
+        </div>
+
+        <div class="budget-layout">
+          <form id="budgetForm" class="budget-form">
+            <h2>Add transaction</h2>
+
+            <label>
+              <span>Title</span>
+              <input id="transactionTitle" type="text" placeholder="e.g. Grocery Shopping" required>
+            </label>
+
+            <label>
+              <span>Amount</span>
+              <input id="transactionAmount" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+            </label>
+
+            <div class="form-row">
+              <label>
+                <span>Type</span>
+                <select id="transactionType">
+                  <option value="income">Income</option>
+                  <option value="expense" selected>Expense</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Category</span>
+                <select id="transactionCategory">
+                  <option value="Food">Food</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Utilities">Utilities</option>
+                  <option value="Housing">Housing</option>
+                  <option value="Salary">Salary</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Savings">Savings</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Education">Education</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              <span>Date</span>
+              <input id="transactionDate" type="date" required>
+            </label>
+
+            <button class="btn btn-primary budget-submit" type="submit">Add Entry</button>
+          </form>
+
+          <section class="transaction-panel">
+            <div class="panel-header">
+              <h2>Recent activity</h2>
+            </div>
+            <ul id="transactionList" class="transaction-list" aria-live="polite"></ul>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-circuit"></div>
+    <div class="footer-inner">
+      <a class="logo footer-logo" href="index.html">
+        <img class="logo-image" src="assets/kc-logo.png" alt="KC logo">
+        <span class="logo-text">Khert<span>Cuizon</span></span>
+      </a>
+      <p class="footer-tagline">Code. Create. Innovate.</p>
+      <div class="social-icons footer-socials">
+        <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/_cuizon29?stkn=MW1yNzFjMjl4Mm9i" rel="noopener noreferrer" target="_blank">
+          <svg aria-hidden="true" viewbox="0 0 24 24">
+            <rect fill="none" height="18" rx="5" ry="5" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="3"></rect>
+            <circle cx="12" cy="12" fill="none" r="4.2" stroke="currentColor" stroke-width="1.8"></circle>
+            <circle cx="17.4" cy="6.6" fill="currentColor" r="1.1"></circle>
+          </svg>
+        </a>
+        <a aria-label="GitHub" class="social-icon" href="https://github.com/Khertcuizon">
+          <svg viewbox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"></path></svg>
+        </a>
+        <a aria-label="Facebook" class="social-icon" href="https://www.facebook.com/khert.cuizon.2025" rel="noopener noreferrer" target="_blank">
+          <svg aria-hidden="true" viewbox="0 0 16 16">
+            <path d="M8.051 16v-7H5.5V6h2.551V4.291C8.051 1.742 9.612 0 12.296 0H14.5v3h-1.338c-1.173 0-1.611.726-1.611 1.47V6H14.5l-.5 3h-2.449v7H8.051Z" fill="currentColor"></path>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">© 2025 Khert Cuizon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+  <script src="budget-tracker.js"></script>
+</body>
+</html>
